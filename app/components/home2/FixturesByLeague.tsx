@@ -74,7 +74,7 @@ export default function Fixtures({ fixturesByTeamId,selectedDate }: PageProps) {
             {fixtures.map(fixture => (
                 <Link
                     key={fixture.fixture.id}
-                    href={`/match/${fixture.fixture.id}nm${fixture.league.name}seas${fixture.league.season}lid${fixture.league.id}`}
+                    href={`/fixture/${fixture.fixture.id}nm${fixture.league.name}seas${fixture.league.season}lid${fixture.league.id}`}
                     className="w-full flex items-center bg-gray-700 hover:bg-red-800 rounded-md p-4 mb-2"
                 >
                     <div className="flex flex-col items-center w-3/12 text-sm">
@@ -87,21 +87,21 @@ export default function Fixtures({ fixturesByTeamId,selectedDate }: PageProps) {
                         <div className="text-lg font-bold">
                             {fixture.goals.home} - {fixture.goals.away}
                         </div>
-                        {["1H"].includes(match.fixture.status.short) && (
+                        {["1H"].includes(fixture.fixture.status.short) && (
     <div className="text-xs text-red-600">
-        {match.fixture.status.elapsed >= 45 ? `45+${match.fixture.status.elapsed - 44}` : match.fixture.status.elapsed}
+        {fixture.fixture.status.elapsed >= 45 ? `45+${fixture.fixture.status.elapsed - 44}` : fixture.fixture.status.elapsed}
         <span className="inline-block animate-ping">′</span>
     </div>
 )}
-                {["2H"].includes(match.fixture.status.short) && (
+                {["2H"].includes(fixture.fixture.status.short) && (
     <div className="text-xs text-red-600">
-        {match.fixture.status.elapsed >= 90 ? `90+${match.fixture.status.elapsed - 89}` : match.fixture.status.elapsed}
+        {fixture.fixture.status.elapsed >= 90 ? `90+${fixture.fixture.status.elapsed - 89}` : fixture.fixture.status.elapsed}
         <span className="inline-block animate-ping">′</span>
     </div>
 )}
-                {["ET"].includes(match.fixture.status.short) && (
+                {["ET"].includes(fixture.fixture.status.short) && (
     <div className="text-xs text-red-600">
-        {match.fixture.status.elapsed+1}
+        {fixture.fixture.status.elapsed+1}
         <span className="inline-block animate-ping">′</span>
     </div>
 )}

@@ -85,8 +85,26 @@ export default function Fixtures({ fixturesByTeamId,selectedDate }: PageProps) {
                         <div className="text-center">{fixture.league.name}</div>
                         <LocalTime fixture={fixture} />
                         <div className="text-lg font-bold">
-                            {fixture.score.fulltime.home} - {fixture.score.fulltime.away}
+                            {fixture.goals.home} - {fixture.goals.away}
                         </div>
+                        {["1H"].includes(match.fixture.status.short) && (
+    <div className="text-xs text-red-600">
+        {match.fixture.status.elapsed >= 45 ? `45+${match.fixture.status.elapsed - 44}` : match.fixture.status.elapsed}
+        <span className="inline-block animate-ping">′</span>
+    </div>
+)}
+                {["2H"].includes(match.fixture.status.short) && (
+    <div className="text-xs text-red-600">
+        {match.fixture.status.elapsed >= 90 ? `90+${match.fixture.status.elapsed - 89}` : match.fixture.status.elapsed}
+        <span className="inline-block animate-ping">′</span>
+    </div>
+)}
+                {["ET"].includes(match.fixture.status.short) && (
+    <div className="text-xs text-red-600">
+        {match.fixture.status.elapsed+1}
+        <span className="inline-block animate-ping">′</span>
+    </div>
+)}
                         <div className="text-center">{fixture.fixture.venue.name}</div>
                     </div>
                     <div className="flex flex-col items-center w-3/12 text-sm">

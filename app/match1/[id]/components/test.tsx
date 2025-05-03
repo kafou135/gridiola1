@@ -842,8 +842,8 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                         <LocalTime fixture={fixtureByFixtureId} />
                     </div>
                     <div className="text-xl md:text-2xl font-bold py-1">
-                    <span className="text-white">
-                            {fixtureByFixtureId.goals.home } - {fixtureByFixtureId.goals.away }
+                            <span className="text-white">
+                            {fixtureByFixtureId.goals.home} - {fixtureByFixtureId.goals.away}
                         </span>
                        
                     </div>
@@ -1013,12 +1013,12 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                    <div className="relative w-full max-w-3xl">
                                               {/* Home Team Formation (Top Left) */}
                                                   <div className="absolute top-0 left-0 bg-blue-600 text-white px-2 py-0 rounded-md text-sm font-bold z-10">
-                                                      {lineups?.[0]?.formation}
+                                                      {lineups.[0].formation}
                                                   </div>
                                               
                                                   {/* Away Team Formation (Top Right) */}
                                                   <div className="absolute top-0 right-0 bg-red-600 text-white px-2 py-0 rounded-md text-sm font-bold z-10">
-                                                      {lineups?.[1]?.formation}
+                                                      {lineups.[1].formation}
                                                   </div>
                                               
                                                   {/* Field img */}
@@ -1030,7 +1030,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                                                   />
                                               
                                                   {/* Home Team Players */}
-                                                  {lineups?.[0]?.startXI.map((player) => {
+                                                  {lineups?.[0].startXI.map((player) => {
                                                       if (player.player.grid.length!=3) return null
                                                                   const [x, y] = player.player.grid.split(":").map(Number);
                                                                   const positionTop = getTopPositionForHome(player.player.pos, y,x);
@@ -1092,7 +1092,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                                                   })}
                                               
                                                   {/* Away Team Players */}
-                                                  {lineups?.[1]?.startXI.map((player) => {
+                                                  {lineups.[1].startXI.map((player) => {
                                                       if (!player.player.grid) return null
                                                       const [x, y] = player.player.grid.split(":").map(Number);
                                                       const positionTop = getTopPositionForAway(player.player.pos, y, x);

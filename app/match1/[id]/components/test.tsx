@@ -1013,12 +1013,12 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                    <div className="relative w-full max-w-3xl">
                                               {/* Home Team Formation (Top Left) */}
                                                   <div className="absolute top-0 left-0 bg-blue-600 text-white px-2 py-0 rounded-md text-sm font-bold z-10">
-                                                      {lineups?.[0]?.formation}
+                                                      {lineups?.lineups?.[0]?.formation}
                                                   </div>
                                               
                                                   {/* Away Team Formation (Top Right) */}
                                                   <div className="absolute top-0 right-0 bg-red-600 text-white px-2 py-0 rounded-md text-sm font-bold z-10">
-                                                      {lineups?.[1]?.formation}
+                                                      {lineups?.lineups?.[1]?.formation}
                                                   </div>
                                               
                                                   {/* Field img */}
@@ -1030,14 +1030,14 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                                                   />
                                               
                                                   {/* Home Team Players */}
-                                                  {lineups?.[0]?.startXI.map((player) => {
+                                                  {lineups?.lineups?.[0]?.startXI.map((player) => {
                                                       if (player.player.grid.length!=3) return null
                                                                   const [x, y] = player.player.grid.split(":").map(Number);
                                                                   const positionTop = getTopPositionForHome(player.player.pos, y,x);
                                                       let leftPosition;
-                                                      if (lineups[0].formation.length === 5) {
+                                                      if (lineups?.lineups[0].formation.length === 5) {
                                                           leftPosition = `${(x / 5) * 50}%`;
-                                                      } else if (lineups[0].formation.length === 7) {
+                                                      } else if (lineups?.lineups[0].formation.length === 7) {
                                                           leftPosition = `${(x / 6.5) * 50}%`;
                                                       }
                                               
@@ -1092,14 +1092,14 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                                                   })}
                                               
                                                   {/* Away Team Players */}
-                                                  {lineups?.[1]?.startXI.map((player) => {
+                                                  {lineups?.lineups?.[1]?.startXI.map((player) => {
                                                       if (!player.player.grid) return null
                                                       const [x, y] = player.player.grid.split(":").map(Number);
                                                       const positionTop = getTopPositionForAway(player.player.pos, y, x);
                                                       let leftPosition;
-                                                      if (lineups[1].formation.length === 5) {
+                                                      if (lineups?.lineups[1].formation.length === 5) {
                                                           leftPosition = `${100 - (x / 5) * 50}%`;
-                                                      } else if (lineups[1].formation.length === 7) {
+                                                      } else if (lineups?.lineups[1].formation.length === 7) {
                                                           leftPosition = `${100 - (x / 6.5) * 50}%`;
                                                       }
                                               
@@ -1181,14 +1181,14 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                     <div className="w-1/2 p-2">
                         <h3 className="text-sm font-bold text-center">{fixtureByFixtureId.teams.home.name}</h3>
                         <p className="text-xs text-center text-gray-400">
-                            {lineups?.[0]?.formation ? `Formation: ${lineups?.[0]?.formation}` : "Formation data not available"}
+                            {lineups?.lineups?.[0]?.formation ? `Formation: ${lineups?.lineups?.[0]?.formation}` : "Formation data not available"}
                         </p>
                         
                         {/* Starting XI */}
                         <div className="mt-3 bg-gray-700 p-2 rounded-md shadow">
                             <h4 className="text-xs font-semibold text-center text-yellow-400">Starting XI</h4>
                             <ul className="text-xs">
-                                {lineups?.[0]?.startXI.map((player) => (
+                                {lineups?.lineups?.[0]?.startXI.map((player) => (
                                     <li key={player.player.id} className="py-1">
                                         {player.player.name} ({player.player.number})
                                     </li>
@@ -1200,8 +1200,8 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                         <div className="mt-3 bg-gray-900 p-2 rounded-md shadow">
                             <h4 className="text-xs font-semibold text-center text-blue-400">Substitutes</h4>
                             <ul className="text-xs text-gray-300 italic">
-                                {lineups?.[0]?.substitutes?.length > 0 ? (
-                                    lineups?.[0]?.substitutes?.map((player) => (
+                                {lineups?.lineups?.[0]?.substitutes?.length > 0 ? (
+                                    lineups?.lineups?.[0]?.substitutes?.map((player) => (
                                         <li key={player.player.id} className="py-1">
                                             {player.player.name} ({player.player.number})
                                         </li>
@@ -1214,9 +1214,9 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                         {/* Coach */}
                         <div className="mt-3 bg-gray-900 p-2 rounded-md shadow">
                             <h4 className="text-xs font-semibold text-center text-red-400">coach</h4>
-                          {lineups?.[0]?.coach && (
+                          {lineups?.lineups?.[0]?.coach && (
                               <div className="text-white text-sm mt-2">
-                                  <span className="font-bold"></span>{lineups[0].coach.name}
+                                  <span className="font-bold"></span>{lineups?.lineups[0].coach.name}
                               </div>
                           )}
                     </div>
@@ -1226,14 +1226,14 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                     <div className="w-1/2 p-2">
                         <h3 className="text-sm font-bold text-center">{fixtureByFixtureId.teams.away.name}</h3>
                         <p className="text-xs text-center text-gray-400">
-                            {lineups?.[1]?.formation ? `Formation: ${lineups?.[1]?.formation}` : "Formation data not available"}
+                            {lineups?.lineups?.[1]?.formation ? `Formation: ${lineups?.lineups?.[1]?.formation}` : "Formation data not available"}
                         </p>
                         
                         {/* Starting XI */}
                         <div className="mt-3 bg-gray-700 p-2 rounded-md shadow">
                             <h4 className="text-xs font-semibold text-center text-yellow-400">Starting XI</h4>
                             <ul className="text-xs">
-                                {lineups?.[1]?.startXI.map((player) => (
+                                {lineups?.lineups?.[1]?.startXI.map((player) => (
                                     <li key={player.player.id} className="py-1">
                                         {player.player.name} ({player.player.number})
                                     </li>
@@ -1245,8 +1245,8 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                         <div className="mt-3 bg-gray-900 p-2 rounded-md shadow">
                             <h4 className="text-xs font-semibold text-center text-blue-400">Substitutes</h4>
                             <ul className="text-xs text-gray-300 italic">
-                                {lineups?.[1]?.substitutes?.length > 0 ? (
-                                    lineups?.[1]?.substitutes?.map((player) => (
+                                {lineups?.lineups?.[1]?.substitutes?.length > 0 ? (
+                                    lineups?.lineups?.[1]?.substitutes?.map((player) => (
                                         <li key={player.player.id} className="py-1">
                                             {player.player.name} ({player.player.number})
                                         </li>
@@ -1259,9 +1259,9 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                         {/* Coach */}
                         <div className="mt-3 bg-gray-900 p-2 rounded-md shadow">
                             <h4 className="text-xs font-semibold text-center text-red-400">coach</h4>
-                          {lineups?.[1]?.coach && (
+                          {lineups?.lineups?.[1]?.coach && (
                               <div className="text-white text-sm mt-2">
-                                  <span className="font-bold"></span>{lineups[1].coach.name}
+                                  <span className="font-bold"></span>{lineups?.lineups[1].coach.name}
                               </div>
                           )}
                     </div>

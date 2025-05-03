@@ -820,7 +820,6 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
     return (
         <div className="flex flex-col w-full justify-center items-center bg-gray-900 text-neutral-100 py-5 md:py-6">
 
-             <div className="flex w-full max-w-3xl items-center justify-center bg-gray-800 p-4 rounded-lg shadow-md">
                 {/* Home Team */}
                 <div className="w-1/3 flex flex-col justify-center items-center">
                     <Link href={`../team/${fixtureByFixtureId.teams.home.id}nm${fixtureByFixtureId.league.name}seas${fixtureByFixtureId.league.season}lid${fixtureByFixtureId.league.id}`}>

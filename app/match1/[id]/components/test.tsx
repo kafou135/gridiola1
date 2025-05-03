@@ -39,7 +39,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
     const getTopPositionForHome = (position: string, y: number, x: number) => {
         let topPosition = 0;
         
-        if (lineups[0]?.formation? === '4-2-1-3') {
+        if (lineups?.lineups[0]?.formation === '4-2-1-3') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 4) * 80; break;

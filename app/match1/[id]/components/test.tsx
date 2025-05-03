@@ -1035,7 +1035,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                                                                   const [x, y] = player.player.grid.split(":").map(Number);
                                                                   const positionTop = getTopPositionForHome(player.player.pos, y,x);
                                                       let leftPosition;
-                                                      if (lineups?.lineups?.lineups[0]?.formation.length === 5) {
+                                                      if (lineups?.lineups[0]?.formation.length === 5) {
                                                           leftPosition = `${(x / 5) * 50}%`;
                                                       } else if (lineups?.lineups?.lineups[0]?.formation.length === 7) {
                                                           leftPosition = `${(x / 6.5) * 50}%`;
@@ -1097,9 +1097,9 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                                                       const [x, y] = player.player.grid.split(":").map(Number);
                                                       const positionTop = getTopPositionForAway(player.player.pos, y, x);
                                                       let leftPosition;
-                                                      if (lineups?.lineups?.lineups[1]?.formation.length === 5) {
+                                                      if (lineups?.lineups[1]?.formation.length === 5) {
                                                           leftPosition = `${100 - (x / 5) * 50}%`;
-                                                      } else if (lineups?.lineups?.lineups[1]?.formation.length === 7) {
+                                                      } else if (lineups?.lineups[1]?.formation.length === 7) {
                                                           leftPosition = `${100 - (x / 6.5) * 50}%`;
                                                       }
                                               

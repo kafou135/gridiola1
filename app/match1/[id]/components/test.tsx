@@ -39,7 +39,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
     const getTopPositionForHome = (position: string, y: number, x: number) => {
         let topPosition = 0;
         
-        if (lineups[0].formation === '4-2-1-3') {
+        if (lineups[0]?.formation? === '4-2-1-3') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 4) * 80; break;
@@ -48,7 +48,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = (y / 3) * 75; break;
             }
         }
-        else if (lineups[0].formation === '3-5-2') {
+        else if (lineups?.lineups[0]?.formation === '3-5-2') {
             switch (x) {
                 case 1: topPosition = 50; break; // Goalkeeper
                 case 2: topPosition = (y / 3) * 75; break; // 3 Attacking Midfielders
@@ -56,7 +56,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 4: topPosition = (y / 2) * 66; break; // 2 Midfielders
             }
         } 
-        else if (lineups[0].formation === '4-4-2') {
+        else if (lineups?.lineups[0]?.formation === '4-4-2') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 4) * 80; break;
@@ -64,7 +64,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 4: topPosition = (y / 2) * 66; break;
             }
         } 
-        else if (lineups[0].formation === '4-3-3') {
+        else if (lineups?.lineups[0]?.formation === '4-3-3') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 4) * 80; break;
@@ -72,7 +72,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 4: topPosition = (y / 3) * 75; break;
             }
         } 
-        else if (lineups[0].formation === '4-3-2-1') {
+        else if (lineups?.lineups[0]?.formation === '4-3-2-1') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 4) * 80; break;
@@ -81,7 +81,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition =50; break;
             }
         }
-        else if (lineups[0].formation === '4-3-1-2') {
+        else if (lineups?.lineups[0]?.formation === '4-3-1-2') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 4) * 80; break;
@@ -90,7 +90,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = (y / 2) * 66; break;
             }
         }
-        else if (lineups[0].formation === '4-2-3-1') {
+        else if (lineups?.lineups[0]?.formation === '4-2-3-1') {
             switch (x) {
                 case 1: topPosition = 50; break; // Goalkeeper
                 case 2: topPosition = (y / 4) * 80; break; // Defenders
@@ -99,7 +99,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = 50; break; // Striker
             }
         } 
-        else if (lineups[0].formation === '4-1-4-1') {
+        else if (lineups?.lineups[0]?.formation === '4-1-4-1') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 4) * 80; break;
@@ -108,7 +108,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = 50; break;
             }
         }
-        else if (lineups[0].formation === '3-4-2-1') {
+        else if (lineups?.lineups[0]?.formation === '3-4-2-1') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 3) * 75; break;
@@ -117,7 +117,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = 50; break;
             }
         }
-        else if (lineups[0].formation === '4-1-2-3') {
+        else if (lineups?.lineups[0]?.formation === '4-1-2-3') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 4) * 80; break;
@@ -126,7 +126,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = (y / 3) * 75; break;
             }
         }
-        else if (lineups[0].formation === '3-4-3') {
+        else if (lineups?.lineups[0]?.formation === '3-4-3') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 3) * 75; break;
@@ -134,7 +134,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 4: topPosition = (y / 3) * 75; break;
             }
         }
-        else if (lineups[0].formation === '4-1-3-2') {
+        else if (lineups?.lineups[0]?.formation === '4-1-3-2') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 4) * 80; break;
@@ -143,7 +143,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = (y/2)*66; break;
             }
         }
-        else if (lineups[0].formation === '3-2-4-1') {
+        else if (lineups?.lineups[0]?.formation === '3-2-4-1') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 3) * 75; break;
@@ -152,7 +152,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = 50; break;
             }
         }
-        else if (lineups[0].formation === '3-2-3-2') {
+        else if (lineups?.lineups[0]?.formation === '3-2-3-2') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 3) * 75; break;
@@ -161,7 +161,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = (y / 2) * 66; break;
             }
         }
-        else if (lineups[0].formation === '3-1-4-2') {
+        else if (lineups?.lineups[0]?.formation === '3-1-4-2') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 3) * 75; break;
@@ -170,7 +170,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = (y / 2) * 66; break;
             }
         }
-        else if (lineups[0].formation === '5-3-2') {
+        else if (lineups?.lineups[0]?.formation === '5-3-2') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 5) * 85; break;
@@ -178,7 +178,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 4: topPosition = (y/2)*66; break;
             }
         }
-        else if (lineups[0].formation === '5-4-1') {
+        else if (lineups?.lineups[0]?.formation === '5-4-1') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 5) * 85; break;
@@ -186,7 +186,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 4: topPosition = 50; break;
             }
         }
-        else if (lineups[0].formation === '3-4-1-2') {
+        else if (lineups?.lineups[0]?.formation === '3-4-1-2') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 3) * 75; break;
@@ -195,7 +195,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = (y / 2) * 66; break;
             }
         }
-        else if (lineups[0].formation === '4-5-1') {
+        else if (lineups?.lineups[0]?.formation === '4-5-1') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 4) * 80; break;
@@ -203,7 +203,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 4: topPosition = 50; break;
             }
         }
-        else if (lineups[0].formation === '5-2-2-1') {
+        else if (lineups?.lineups[0]?.formation === '5-2-2-1') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 5) * 85; break;
@@ -212,7 +212,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = 50; break;
             }
         }
-        else if (lineups[0].formation === '5-2-1-2') {
+        else if (lineups?.lineups[0]?.formation === '5-2-1-2') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 5) * 85; break;
@@ -221,7 +221,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = (y / 2) * 66; break;
             }
         }
-        else if (lineups[0].formation === '3-2-5') {
+        else if (lineups?.lineups[0]?.formation === '3-2-5') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 3) * 75; break;
@@ -229,7 +229,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 4: topPosition = (y / 5) * 85; break;
             }
         }
-        else if (lineups[0].formation === '3-3-4') {
+        else if (lineups?.lineups[0]?.formation === '3-3-4') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 3) * 75; break;
@@ -237,7 +237,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 4: topPosition = (y / 4) * 80; break;
             }
         }
-        else if (lineups[0].formation === '4-1-5') {
+        else if (lineups?.lineups[0]?.formation === '4-1-5') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 4) * 80; break;
@@ -245,7 +245,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 4: topPosition = (y / 5) * 85; break;
             }
         }
-        else if (lineups[0].formation === '4-2-4') {
+        else if (lineups?.lineups[0]?.formation === '4-2-4') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 4) * 80; break;
@@ -253,7 +253,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 4: topPosition = (y / 4) * 80; break;
             }
         }
-        else if (lineups[0].formation === '5-1-4') {
+        else if (lineups?.lineups[0]?.formation === '5-1-4') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 5) * 85; break;
@@ -261,7 +261,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 4: topPosition = (y / 4) * 80; break;
             }
         }
-        else if (lineups[0].formation === '5-2-3') {
+        else if (lineups?.lineups[0]?.formation === '5-2-3') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 5) * 85; break;
@@ -269,7 +269,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 4: topPosition = (y / 3) * 75; break;
             }
         }
-        else if (lineups[0].formation === '3-1-1-5') {
+        else if (lineups?.lineups[0]?.formation === '3-1-1-5') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 3) * 75; break;
@@ -278,7 +278,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = (y / 5) * 85; break;
             }
         }
-        else if (lineups[0].formation === '3-1-2-4') {
+        else if (lineups?.lineups[0]?.formation === '3-1-2-4') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 3) * 75; break;
@@ -287,7 +287,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = (y / 4) * 80; break;
             }
         }
-        else if (lineups[0].formation === '3-1-3-3') {
+        else if (lineups?.lineups[0]?.formation === '3-1-3-3') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 3) * 75; break;
@@ -296,7 +296,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = (y / 3) * 75; break;
             }
         }
-        else if (lineups[0].formation === '3-1-5-1') {
+        else if (lineups?.lineups[0]?.formation === '3-1-5-1') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 3) * 75; break;
@@ -305,7 +305,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = 50; break;
             }
         }
-        else if (lineups[0].formation === '3-2-1-4') {
+        else if (lineups?.lineups[0]?.formation === '3-2-1-4') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 3) * 75; break;
@@ -314,7 +314,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = (y / 4) * 80; break;
             }
         }
-        else if (lineups[0].formation === '3-2-2-3') {
+        else if (lineups?.lineups[0]?.formation === '3-2-2-3') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 3) * 75; break;
@@ -323,7 +323,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = (y / 3) * 75; break;
             }
         }
-        else if (lineups[0].formation === '3-3-1-3') {
+        else if (lineups?.lineups[0]?.formation === '3-3-1-3') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 3) * 75; break;
@@ -332,7 +332,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = (y / 3) * 75; break;
             }
         }
-        else if (lineups[0].formation === '3-3-2-2') {
+        else if (lineups?.lineups[0]?.formation === '3-3-2-2') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 3) * 75; break;
@@ -341,7 +341,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = (y / 2) * 66; break;
             }
         }
-        else if (lineups[0].formation === '3-3-3-1') {
+        else if (lineups?.lineups[0]?.formation === '3-3-3-1') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 3) * 75; break;
@@ -350,7 +350,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = 50; break;
             }
         }
-        else if (lineups[0].formation === '3-5-1-1') {
+        else if (lineups?.lineups[0]?.formation === '3-5-1-1') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 3) * 75; break;
@@ -359,7 +359,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = 50; break;
             }
         }
-        else if (lineups[0].formation === '4-1-1-4') {
+        else if (lineups?.lineups[0]?.formation === '4-1-1-4') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 4) * 80; break;
@@ -368,7 +368,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = (y / 4) * 80; break;
             }
         }
-        else if (lineups[0].formation === '4-2-2-2') {
+        else if (lineups?.lineups[0]?.formation === '4-2-2-2') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 4) * 80; break;
@@ -377,7 +377,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = (y / 2) * 66; break;
             }
         }
-        else if (lineups[0].formation === '4-4-1-1') {
+        else if (lineups?.lineups[0]?.formation === '4-4-1-1') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 4) * 80; break;
@@ -386,7 +386,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = 50; break;
             }
         }
-        else if (lineups[0].formation === '5-1-1-3') {
+        else if (lineups?.lineups[0]?.formation === '5-1-1-3') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 5) * 85; break;
@@ -395,7 +395,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = (y / 3) * 75; break;
             }
         }
-        else if (lineups[0].formation === '5-1-2-2') {
+        else if (lineups?.lineups[0]?.formation === '5-1-2-2') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 5) * 85; break;
@@ -404,7 +404,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = (y / 2) * 66; break;
             }
         }
-        else if (lineups[0].formation === '5-1-3-1') {
+        else if (lineups?.lineups[0]?.formation === '5-1-3-1') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 5) * 85; break;
@@ -413,7 +413,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = 50; break;
             }
         }
-        else if (lineups[0].formation === '5-3-1-1') {
+        else if (lineups?.lineups[0]?.formation === '5-3-1-1') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 5) * 85; break;
@@ -429,7 +429,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
     const getTopPositionForAway = (position: string, y: number, x: number) => {
         let topPosition = 0;
     
-        if (lineups[1].formation === '4-2-3-1') {
+        if (lineups?.lineups[1]?.formation === '4-2-3-1') {
             switch (x) {
                 case 1: topPosition = 50; break; // Goalkeeper
                 case 2: topPosition = (y / 4) * 80; break; // Defenders
@@ -438,7 +438,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = 50; break; // Striker
             }
         }
-        else if (lineups[1].formation === '3-5-2') {
+        else if (lineups?.lineups[1]?.formation === '3-5-2') {
             switch (x) {
                 case 1: topPosition = 50; break; // Goalkeeper
                 case 2: topPosition = (y / 3) * 75; break; // 3 Attacking Midfielders
@@ -446,7 +446,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 4: topPosition = (y / 2) * 66; break; // 2 Midfielders
             }
         }
-        else if (lineups[1].formation === '4-4-2') {
+        else if (lineups?.lineups[1]?.formation === '4-4-2') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 4) * 80; break;
@@ -454,7 +454,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 4: topPosition = (y / 2) * 66; break;
             }
         } 
-        else if (lineups[1].formation === '4-3-3') {
+        else if (lineups?.lineups[1]?.formation === '4-3-3') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 4) * 80; break;
@@ -462,7 +462,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 4: topPosition = (y / 3) * 75; break;
             }
         } 
-        else if (lineups[1].formation === '4-3-2-1') {
+        else if (lineups?.lineups[1]?.formation === '4-3-2-1') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 4) * 80; break;
@@ -471,7 +471,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition =50; break;
             }
         }
-        else if (lineups[1].formation === '4-3-1-2') {
+        else if (lineups?.lineups[1]?.formation === '4-3-1-2') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 4) * 80; break;
@@ -480,7 +480,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = (y / 2) * 66; break;
             }
         }
-        else if (lineups[1].formation === '4-2-1-3') {
+        else if (lineups?.lineups[1]?.formation === '4-2-1-3') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 4) * 80; break;
@@ -489,7 +489,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = (y / 3) * 75; break;
             }
         }
-        else if (lineups[1].formation === '4-5-1') {
+        else if (lineups?.lineups[1]?.formation === '4-5-1') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 4) * 80; break;
@@ -497,7 +497,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 4: topPosition = 50; break;
             }
         }
-        else if (lineups[1].formation === '4-1-4-1') {
+        else if (lineups?.lineups[1]?.formation === '4-1-4-1') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 4) * 80; break;
@@ -506,7 +506,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = 50; break;
             }
         }
-        else if (lineups[1].formation === '4-1-2-3') {
+        else if (lineups?.lineups[1]?.formation === '4-1-2-3') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 4) * 80; break;
@@ -515,7 +515,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = (y / 3) * 75; break;
             }
         }
-        else if (lineups[1].formation === '3-4-2-1') {
+        else if (lineups?.lineups[1]?.formation === '3-4-2-1') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 3) * 75; break;
@@ -524,7 +524,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = 50; break;
             }
         }
-        else if (lineups[1].formation === '3-4-3') {
+        else if (lineups?.lineups[1]?.formation === '3-4-3') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 3) * 75; break;
@@ -532,7 +532,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 4: topPosition = (y / 3) * 75; break;
             }
         }
-        else if (lineups[1].formation === '3-2-5') {
+        else if (lineups?.lineups[1]?.formation === '3-2-5') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 3) * 75; break;
@@ -540,7 +540,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 4: topPosition = (y / 5) * 85; break;
             }
         }
-        else if (lineups[1].formation === '3-3-4') {
+        else if (lineups?.lineups[1]?.formation === '3-3-4') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 3) * 75; break;
@@ -548,7 +548,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 4: topPosition = (y / 4) * 80; break;
             }
         }
-        else if (lineups[1].formation === '4-1-5') {
+        else if (lineups?.lineups[1]?.formation === '4-1-5') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 4) * 80; break;
@@ -556,7 +556,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 4: topPosition = (y / 5) * 85; break;
             }
         }
-        else if (lineups[1].formation === '4-2-4') {
+        else if (lineups?.lineups[1]?.formation === '4-2-4') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 4) * 80; break;
@@ -564,7 +564,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 4: topPosition = (y / 4) * 80; break;
             }
         }
-        else if (lineups[1].formation === '5-1-4') {
+        else if (lineups?.lineups[1]?.formation === '5-1-4') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 5) * 85; break;
@@ -572,7 +572,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 4: topPosition = (y / 4) * 80; break;
             }
         }
-        else if (lineups[1].formation === '5-2-3') {
+        else if (lineups?.lineups[1]?.formation === '5-2-3') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 5) * 85; break;
@@ -580,7 +580,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 4: topPosition = (y / 3) * 75; break;
             }
         }
-        else if (lineups[1].formation === '3-2-4-1') {
+        else if (lineups?.lineups[1]?.formation === '3-2-4-1') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 3) * 75; break;
@@ -589,7 +589,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = 50; break;
             }
         }
-        else if (lineups[1].formation === '3-2-3-2') {
+        else if (lineups?.lineups[1]?.formation === '3-2-3-2') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 3) * 75; break;
@@ -598,7 +598,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = (y / 2) * 66; break;
             }
         }
-        else if (lineups[1].formation === '3-1-4-2') {
+        else if (lineups?.lineups[1]?.formation === '3-1-4-2') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 3) * 75; break;
@@ -607,7 +607,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = (y / 2) * 66; break;
             }
         }
-        else if (lineups[1].formation === '5-3-2') {
+        else if (lineups?.lineups[1]?.formation === '5-3-2') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 5) * 85; break;
@@ -615,7 +615,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 4: topPosition = (y/2)*66; break;
             }
         }
-        else if (lineups[1].formation === '4-1-3-2') {
+        else if (lineups?.lineups[1]?.formation === '4-1-3-2') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 4) * 80; break;
@@ -624,7 +624,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = (y/2)*66; break;
             }
         }
-        else if (lineups[1].formation === '5-4-1') {
+        else if (lineups?.lineups[1]?.formation === '5-4-1') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 5) * 85; break;
@@ -632,7 +632,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 4: topPosition = 50; break;
             }
         }
-        else if (lineups[1].formation === '3-4-1-2') {
+        else if (lineups?.lineups[1]?.formation === '3-4-1-2') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 3) * 75; break;
@@ -641,7 +641,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = (y / 2) * 66; break;
             }
         }
-        else if (lineups[1].formation === '5-2-2-1') {
+        else if (lineups?.lineups[1]?.formation === '5-2-2-1') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 5) * 85; break;
@@ -650,7 +650,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = 50; break;
             }
         }
-        else if (lineups[1].formation === '5-2-1-2') {
+        else if (lineups?.lineups[1]?.formation === '5-2-1-2') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 5) * 85; break;
@@ -659,7 +659,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = (y / 2) * 66; break;
             }
         }
-        else if (lineups[1].formation === '3-1-1-5') {
+        else if (lineups?.lineups[1]?.formation === '3-1-1-5') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 3) * 75; break;
@@ -668,7 +668,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = (y / 5) * 85; break;
             }
         }
-        else if (lineups[1].formation === '3-1-2-4') {
+        else if (lineups?.lineups[1]?.formation === '3-1-2-4') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 3) * 75; break;
@@ -677,7 +677,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = (y / 4) * 80; break;
             }
         }
-        else if (lineups[1].formation === '3-1-3-3') {
+        else if (lineups?.lineups[1]?.formation === '3-1-3-3') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 3) * 75; break;
@@ -686,7 +686,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = (y / 3) * 75; break;
             }
         }
-        else if (lineups[1].formation === '3-1-5-1') {
+        else if (lineups?.lineups[1]?.formation === '3-1-5-1') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 3) * 75; break;
@@ -695,7 +695,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = 50; break;
             }
         }
-        else if (lineups[1].formation === '3-2-1-4') {
+        else if (lineups?.lineups[1]?.formation === '3-2-1-4') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 3) * 75; break;
@@ -704,7 +704,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = (y / 4) * 80; break;
             }
         }
-        else if (lineups[1].formation === '3-2-2-3') {
+        else if (lineups?.lineups[1]?.formation === '3-2-2-3') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 3) * 75; break;
@@ -713,7 +713,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = (y / 3) * 75; break;
             }
         }
-        else if (lineups[1].formation === '3-3-1-3') {
+        else if (lineups?.lineups[1]?.formation === '3-3-1-3') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 3) * 75; break;
@@ -722,7 +722,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = (y / 3) * 75; break;
             }
         }
-        else if (lineups[1].formation === '3-3-2-2') {
+        else if (lineups?.lineups[1]?.formation === '3-3-2-2') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 3) * 75; break;
@@ -731,7 +731,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = (y / 2) * 66; break;
             }
         }
-        else if (lineups[1].formation === '3-3-3-1') {
+        else if (lineups?.lineups[1]?.formation === '3-3-3-1') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 3) * 75; break;
@@ -740,7 +740,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = 50; break;
             }
         }
-        else if (lineups[1].formation === '3-5-1-1') {
+        else if (lineups?.lineups[1]?.formation === '3-5-1-1') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 3) * 75; break;
@@ -749,7 +749,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = 50; break;
             }
         }
-        else if (lineups[1].formation === '4-1-1-4') {
+        else if (lineups?.lineups[1]?.formation === '4-1-1-4') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 4) * 80; break;
@@ -758,7 +758,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = (y / 4) * 80; break;
             }
         }
-        else if (lineups[1].formation === '4-2-2-2') {
+        else if (lineups?.lineups[1]?.formation === '4-2-2-2') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 4) * 80; break;
@@ -767,7 +767,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = (y / 2) * 66; break;
             }
         }
-        else if (lineups[1].formation === '4-4-1-1') {
+        else if (lineups?.lineups[1]?.formation === '4-4-1-1') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 4) * 80; break;
@@ -776,7 +776,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = 50; break;
             }
         }
-        else if (lineups[1].formation === '5-1-1-3') {
+        else if (lineups?.lineups[1]?.formation === '5-1-1-3') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 5) * 85; break;
@@ -785,7 +785,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = (y / 3) * 75; break;
             }
         }
-        else if (lineups[1].formation === '5-1-2-2') {
+        else if (lineups?.lineups[1]?.formation === '5-1-2-2') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 5) * 85; break;
@@ -794,7 +794,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = (y / 2) * 66; break;
             }
         }
-        else if (lineups[1].formation === '5-1-3-1') {
+        else if (lineups?.lineups[1]?.formation === '5-1-3-1') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 5) * 85; break;
@@ -803,7 +803,7 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                 case 5: topPosition = 50; break;
             }
         }
-        else if (lineups[1].formation === '5-3-1-1') {
+        else if (lineups?.lineups[1]?.formation === '5-3-1-1') {
             switch (x) {
                 case 1: topPosition = 50; break;
                 case 2: topPosition = (y / 5) * 85; break;
@@ -1035,9 +1035,9 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                                                                   const [x, y] = player.player.grid.split(":").map(Number);
                                                                   const positionTop = getTopPositionForHome(player.player.pos, y,x);
                                                       let leftPosition;
-                                                      if (lineups?.lineups[0].formation.length === 5) {
+                                                      if (lineups?.lineups?.lineups[0]?.formation.length === 5) {
                                                           leftPosition = `${(x / 5) * 50}%`;
-                                                      } else if (lineups?.lineups[0].formation.length === 7) {
+                                                      } else if (lineups?.lineups?.lineups[0]?.formation.length === 7) {
                                                           leftPosition = `${(x / 6.5) * 50}%`;
                                                       }
                                               
@@ -1097,9 +1097,9 @@ export default async function Match({ fixtureByFixtureId,h2h,lineups,events }: P
                                                       const [x, y] = player.player.grid.split(":").map(Number);
                                                       const positionTop = getTopPositionForAway(player.player.pos, y, x);
                                                       let leftPosition;
-                                                      if (lineups?.lineups[1].formation.length === 5) {
+                                                      if (lineups?.lineups?.lineups[1]?.formation.length === 5) {
                                                           leftPosition = `${100 - (x / 5) * 50}%`;
-                                                      } else if (lineups?.lineups[1].formation.length === 7) {
+                                                      } else if (lineups?.lineups?.lineups[1]?.formation.length === 7) {
                                                           leftPosition = `${100 - (x / 6.5) * 50}%`;
                                                       }
                                               
